@@ -1,24 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import InvoiceList from './components/InvoiceList';
+import InvoicePage from './components/InvoicePage';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 
 function App() {
   return (
+    <Router >
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+      <Route path="/" exact component={InvoiceList}/>
+      <Route path="/invoice/:id" component={InvoicePage}/>
+      </Switch>
     </div>
+    </Router>
   );
 }
 
