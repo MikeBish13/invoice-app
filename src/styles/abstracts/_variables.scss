@@ -1,0 +1,26 @@
+$background-light: #f8f8fb;
+$box-background: #ffffff;
+$nav-box: #373b53;
+$text-color: #0c0e16;
+$total-box: #373b53;
+$red: #ec5757;
+$red-hover: #ff9797;
+$purple: #7c5dfa;
+$purple-hover: #9277ff;
+$para-color: #888eb0;
+$btn-quarternary-bg: #f9fafe;
+$btn-quarternary-font: #7E88C3;
+$btn-quarternary-bg-hover: #dfe3fa;
+
+$fw-bold: 700;
+$fw-med: 500;
+
+[data-theme="dark"] {
+  $background-light: #141625;
+  $box-background: #1e2139;
+  $text-color: #ffffff;
+  $total-box: #373b53;
+  $btn-quarternary-bg: #252945;
+  $btn-quarternary-font: #DFE3FA;
+  $btn-quarternary-bg-hover: white;
+}

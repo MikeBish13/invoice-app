@@ -1,0 +1,150 @@
+.info-bar {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    margin-bottom: 0.2em;
+  }
+
+  .invoice-sentence-desktop {
+    display: none;
+
+    @include mq(tablet) {
+      display: block;
+    }
+  }
+
+  .invoice-sentence-mobile {
+    @include mq(tablet) {
+      display: none;
+    }
+  }
+
+  &-details {
+    flex-basis: 50%;
+  }
+}
+
+.filter-bar {
+  cursor: pointer;
+  position: relative;
+
+  .filter {
+    display: flex;
+    align-items: center;
+
+    .filter-icon {
+      margin-left: 0.75rem;
+
+      &.active {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .filter-button {
+    font-weight: $fw-bold;
+    color: #0c0e16;
+
+    &-desktop {
+      display: none;
+      @include mq(tablet) {
+        display: block;
+      }
+    }
+    &-mobile {
+      @include mq(tablet) {
+        display: none;
+      }
+    }
+  }
+
+  .filter-items {
+    display: none;
+    list-style: none;
+    background: $box-background;
+    border-radius: 8px;
+    box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+    padding: 1.5rem;
+    width: 12rem;
+    position: absolute;
+    top: 30px;
+    left: -100%;
+
+    @include mq(tablet) {
+      left: -25%;
+    }
+
+    &.active {
+      display: block;
+    }
+
+    .filter-item {
+      margin-bottom: 0.7rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+    appearance: none;
+    height: 1rem;
+    width: 1rem;
+    background: #f2f2f2;
+    border-radius: 2px;
+    outline: transparent;
+    display: flex;
+    justify-content: center;
+    margin-right: 0.8rem;
+
+    &:hover {
+      border: 1px solid $purple;
+    }
+
+    &::after {
+      content: url("/src/images/icon-check.svg");
+      display: none;
+    }
+
+    &:checked {
+      background: $purple;
+    }
+
+    &:checked:after {
+      display: block;
+    }
+  }
+
+  label {
+    cursor: pointer;
+    color: #1e2139;
+    font-size: 0.75rem;
+    font-weight: $fw-bold;
+
+    &:hover {
+      color: #0c0e16;
+    }
+  }
+}
+
+.new-invoice-desktop {
+  display: none;
+  @include mq(tablet) {
+    padding: 8px 15px 8px 8px;
+    display: inline-flex;
+  }
+}
+
+.new-invoice-mobile {
+  @include mq(tablet) {
+    display: none;
+  }
+}
