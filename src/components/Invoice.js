@@ -11,7 +11,7 @@ export default function Invoice({ data }) {
         setStatus(data.status[0].toUpperCase() + data.status.substring(1));
         const newDate = new Date(data.paymentDue).toDateString().substring(3);
         setDate(newDate)
-        let newTotal = data.total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        let newTotal = parseFloat(data.total).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         setTotal(newTotal);
     }, [data])
     
@@ -25,7 +25,7 @@ export default function Invoice({ data }) {
         <p className="invoice-list-date">Due {date}</p>
         <p className="invoice-list-name">{data.clientName}</p>
         <h3 className="invoice-list-total">£{total}</h3>
-        <div className={`invoice-list-status status-btn status-btn-${data.status}`}><div></div> <p>{status}</p></div>
+        <div className={`invoice-list-status status-btn status-btn-${data.status}`}><div className="circle"></div> <p>{status}</p></div>
         <svg className="invoice-arrow-desktop" width="7" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4-4 4" stroke="#7C5DFA" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>
         </Link>
         </li>

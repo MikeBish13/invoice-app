@@ -1,5 +1,7 @@
 import { useRef, useState } from "react";
 import { useStore } from "../storage/store";
+import IconDelete from '../images/icon-delete.svg';
+import IconPlus from '../images/icon-plus.svg';
 
 export default function NewInvoice({ invoiceData }) {
   //  Global State
@@ -74,6 +76,7 @@ export default function NewInvoice({ invoiceData }) {
     let newDeleteButton = document.createElement("button");
     newDeleteButton.type = "button";
     newDeleteButton.addEventListener("click", deleteItem);
+    newDeleteButton.classList.add("trash");
     deleteCell.appendChild(newDeleteButton);
   };
 
@@ -223,12 +226,24 @@ export default function NewInvoice({ invoiceData }) {
   }
 
   return (
-    <>
+    <div className="invoice-modal">
+      <div className="container">
+    <button className="btn-back" onClick={closeForm}>
+              <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M6.342.886L2.114 5.114l4.228 4.228"
+                  stroke="#9277FF"
+                  stroke-width="2"
+                  fill="none"
+                  fill-rule="evenodd"
+                />
+              </svg>
+              Go Back
+          </button>
       {addStatus ? <h1>New Invoice</h1> : <h1>Edit #{invoiceData.id}</h1>}
-      <form onSubmit={submitStatus === 'pending' ? validateForm : createFormData}>
-        {/* Bill From */}
-        <div className="bill-from">
-          <p>Bill from</p>
+      <form className="invoice-form" onSubmit={submitStatus === 'pending' ? validateForm : createFormData}>
+          <p className="form-title bill-from">Bill from</p>
+          <div className="from-street-address">
           <label htmlFor="from-address">Street Address</label>
           <input
             type="text"
@@ -236,8 +251,8 @@ export default function NewInvoice({ invoiceData }) {
             ref={fromAddress}
             defaultValue={editStatus ? invoiceData.senderAddress.street : ""}
           ></input>
-          <div className="bill-from-flex">
-            <div>
+          </div>
+          <div className="from-city">
               <label htmlFor="bill-from-city">City</label>
               <input
                 type="text"
@@ -245,8 +260,8 @@ export default function NewInvoice({ invoiceData }) {
                 ref={fromCity}
                 defaultValue={editStatus ? invoiceData.senderAddress.city : ""}
               ></input>
-            </div>
-            <div>
+              </div>
+              <div className="from-post-code">
               <label htmlFor="bill-from-post-code">Post Code</label>
               <input
                 type="text"
@@ -254,8 +269,8 @@ export default function NewInvoice({ invoiceData }) {
                 ref={fromPostCode}
                 defaultValue={editStatus ? invoiceData.senderAddress.postCode : ""}
               ></input>
-            </div>
-            <div>
+              </div>
+              <div className="from-country">
               <label htmlFor="bill-from-country">Country</label>
               <input
                 type="text"
@@ -263,13 +278,9 @@ export default function NewInvoice({ invoiceData }) {
                 ref={fromCountry}
                 defaultValue={editStatus ? invoiceData.senderAddress.country : ""}
               ></input>
-            </div>
-          </div>
-        </div>
-        {/* Bill To */}
-        <div className="bill-to">
-          <p>Bill To</p>
-          <div>
+              </div>
+          <p className="form-title bill-to">Bill To</p>
+          <div className="client-name">
             <label htmlFor="bill-to-name">Client's Name</label>
             <input
               type="text"
@@ -278,7 +289,7 @@ export default function NewInvoice({ invoiceData }) {
               defaultValue={editStatus ? invoiceData.clientName : ""}
             ></input>
           </div>
-          <div>
+          <div className="client-email">
             <label htmlFor="bill-to-email">Client's Email</label>
             <input
               type="text"
@@ -288,7 +299,7 @@ export default function NewInvoice({ invoiceData }) {
               defaultValue={editStatus ? invoiceData.clientEmail : ""}
             ></input>
           </div>
-          <div>
+          <div className="client-address">
             <label htmlFor="bill-to-address">Street Address</label>
             <input
               type="text"
@@ -297,8 +308,7 @@ export default function NewInvoice({ invoiceData }) {
               defaultValue={editStatus ? invoiceData.clientAddress.street : ""}
             ></input>
           </div>
-          <div className="bill-to-flex">
-            <div>
+            <div className="client-city">
               <label htmlFor="bill-to-city">City</label>
               <input
                 type="text"
@@ -307,7 +317,7 @@ export default function NewInvoice({ invoiceData }) {
                 defaultValue={editStatus ? invoiceData.clientAddress.city : ""}
               ></input>
             </div>
-            <div>
+            <div className="client-post-code">
               <label htmlFor="bill-to-post-code">Post Code</label>
               <input
                 type="text"
@@ -316,7 +326,7 @@ export default function NewInvoice({ invoiceData }) {
                 defaultValue={editStatus ? invoiceData.clientAddress.postCode : ""}
               ></input>
             </div>
-            <div>
+            <div className="client-country">
               <label htmlFor="bill-to-country">Country</label>
               <input
                 type="text"
@@ -325,8 +335,6 @@ export default function NewInvoice({ invoiceData }) {
                 defaultValue={editStatus ? invoiceData.clientAddress.country : ""}
               ></input>
             </div>
-          </div>
-        </div>
         {/* Invoice Details */}
         <div className="invoice-date">
           <label htmlFor="invoice-date">Invoice Date</label>
@@ -356,9 +364,9 @@ export default function NewInvoice({ invoiceData }) {
             defaultValue={editStatus ? invoiceData.description : ''}
           ></input>
         </div>
-        {/* Item List */}
+        {/* Item List Desktop Version */}
         <div className="item-list">
-          <h2>Items</h2>
+          <h3>Item List</h3>
           <table id="item-table">
             <thead>
               <tr>
@@ -376,36 +384,37 @@ export default function NewInvoice({ invoiceData }) {
                   <td><input className="qty" type='text' defaultValue={item.quantity} onChange={calculateTotal}></input></td>
                   <td><input className="price" type='text' defaultValue={item.price} onChange={calculateTotal}></input></td>
                   <td><input className="total" type='text' disabled defaultValue={item.total}></input></td>
-                  <td><button type="button" onClick={deleteItem}></button></td>
+                  <td><button className="trash" type="button" onClick={deleteItem}><img src={IconDelete} alt="trash can"></img></button></td>
                 </tr>
               )
             })}
           </table>
-          <button type="button" onClick={addNewItem}>
-            Add Item
+          <button className="btn btn-six add-item-btn" type="button" onClick={addNewItem}>
+            <img src={IconPlus} alt="plus icon"></img> Add Item
           </button>
         </div>
+    
         {/* Buttons */}
         {addStatus && <div className="add-buttons">
           <input
             type="button"
             name="discard"
-            className="discard-button"
+            className="btn btn-quarternary discard-button"
             value="Discard"
             onClick={closeForm}
           ></input>
           <input
             type="submit"
             name="draft"
-            className="draft-button"
+            className="btn btn-five draft-button"
             value="Save as Draft"
             onClick={() => setSubmitStatus("draft")}
           ></input>
           <input
             type="submit"
             name="save"
-            className="send-button"
-            value="Save and Send"
+            className="btn btn-secondary send-button"
+            value="Save & Send"
             onClick={() => setSubmitStatus("pending")}
           ></input>
         </div>}
@@ -420,6 +429,7 @@ export default function NewInvoice({ invoiceData }) {
           ></input>  
         </div>} 
       </form>
-    </>
+      </div>
+    </div>
   );
 }

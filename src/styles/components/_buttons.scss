@@ -1,127 +1,159 @@
 .btn {
-    cursor: pointer;
-    border-radius: 24px;
-    background: transparent;
-    border: none;
-    outline: transparent;
-    font-family: 'Spartan',sans-serif;
-    font-size: 12px;
-    font-weight: $fw-bold;
-    letter-spacing: -0.25px;
-    line-height: 1;
-    padding: 1em 1.75em;
+  cursor: pointer;
+  border-radius: 24px;
+  background: transparent;
+  border: none;
+  outline: transparent;
+  font-family: "Spartan", sans-serif;
+  font-size: 12px;
+  font-weight: $fw-bold;
+  letter-spacing: -0.25px;
+  line-height: 1;
+  padding: 1rem 1.5rem;
 }
 
 .btn-primary {
-    background: $purple;
-    padding: 0.3em 1.1em 0.3em 0.3em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background: $purple;
+  padding: 0.3em 1.1em 0.3em 0.3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    p {
-        color: white;
-    }
+  p {
+    color: white;
+  }
 
-    &:hover {
-        background: #9277FF;
-    }
+  &:hover {
+    background: #9277ff;
+  }
 
-    img {
-        background: white;
-        border-radius: 50%;
-        padding: 10px;
-        margin-right: 0.5em;
-    }
+  img {
+    background: white;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 0.5em;
+  }
 }
 
 .btn-secondary {
-    background: $purple;
-    color: white;
-    &:hover {
-        background: $purple-hover;
-    }
+  background: $purple;
+  color: white;
+  &:hover {
+    background: $purple-hover;
+  }
 }
 
 .btn-tertiary {
-    background: $red;
-    color: white;
-    &:hover {
-        background: $red-hover;
-    }
+  background: $red;
+  color: white;
+  &:hover {
+    background: $red-hover;
+  }
 }
 
 .btn-quarternary {
-    background: $btn-quarternary-bg;
-    color: $btn-quarternary-font;
-    &:hover {
-        background: $btn-quarternary-bg-hover;
-    }
+  background: $btn-quarternary-bg;
+  color: $btn-quarternary-font;
+  &:hover {
+    background: $btn-quarternary-bg-hover;
+  }
+}
+
+.btn-five {
+  background: $btn-five-bg;
+  color: $btn-five-font;
+  &:hover {
+    background: $btn-five-bg-hover;
+    color: $btn-five-font-hover;
+  }
+}
+
+.btn-six {
+  background: $btn-six-bg;
+  color: $btn-six-font;
+  img {
+    color: #7e88c3;
+  }
+  &:hover {
+    background: $btn-six-bg-hover;
+  }
 }
 
 .status-btn {
-    width: 104px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
+  width: 104px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+
+  p {
+    font-weight: $fw-bold;
+  }
+
+  div {
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    border-radius: 50%;
+  }
+
+  &-paid {
+    background: #33d6a01c;
 
     p {
-        font-weight: $fw-bold;
+      color: #33d69f;
     }
-
     div {
-        width: 8px;
-        height: 8px;
-        margin-right: 8px;
-        border-radius: 50%;
+      background: #33d69f;
     }
+  }
+  &-pending {
+    background: #ff91001a;
 
-    &-paid {
-        background: #33d6a01c;
-
-        p {
-            color: #33D69F;
-        }
-        div {
-            background: #33D69F;
-        }
+    p {
+      color: #ff8f00;
     }
-    &-pending {
-        background: #ff91001a;
-
-        p {
-            color: #FF8F00;
-        }
-        div {
-            background: #FF8F00;
-        }
+    div {
+      background: #ff8f00;
     }
-    &-draft {
-        background: #373b531a;
+  }
+  &-draft {
+    background: #373b531a;
 
-        p {
-            color: #373B53;
-        }
-        div {
-            background: #373B53;
-        }
+    p {
+      color: #373b53;
     }
+    div {
+      background: #373b53;
+    }
+  }
 }
 
 .btn-back {
-    background: transparent;
-    border: none;
-    outline: transparent;
-    a {
-        font-family: 'Spartan', sans-serif;
-        color: $text-color;
-        font-weight: $fw-bold;
-        font-size: 0.75rem;
-        text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: transparent;
+  font-family: "Spartan", sans-serif;
+  color: $text-color;
+  font-weight: $fw-bold;
+  font-size: 0.75rem;
+  text-decoration: none;
+  a {
+    font-family: "Spartan", sans-serif;
+    color: $text-color;
+    font-weight: $fw-bold;
+    font-size: 0.75rem;
+    text-decoration: none;
+    &:hover {
+      color: #7e88c3;
     }
-    svg {
-        margin-right: 1.5rem;
-    }
+  }
+  &:hover {
+    color: #7e88c3;
+  }
+  svg {
+    margin-right: 1.5rem;
+  }
 }

@@ -1,0 +1,61 @@
+label {
+  font-size: 0.75rem;
+  color: $btn-quarternary-font;
+  line-height: 0.9;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+input[type="number"] {
+  border: 1px solid $btn-quarternary-bg-hover;
+  border-radius: 0.25rem;
+  padding: 1rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: $fw-bold;
+  color: $text-color;
+  line-height: 1.2em;
+  width: 100%;
+
+  &::placeholder {
+    opacity: 0.4;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.form-title {
+  font-size: 0.75rem;
+  font-weight: $fw-bold;
+  color: $purple;
+}
+
+.item-list {
+    h3 {
+        color: #777F98;
+        font-weight: $fw-bold;
+
+    }
+  th {
+    font-size: 0.75rem;
+    font-weight: $fw-med;
+    color: $btn-quarternary-font;
+    line-height: 0.9;
+  }
+
+  .trash {
+      cursor: pointer;
+      height: 1rem;
+      width: 0.75rem;
+      background: transparent;
+      border: none;
+      background-image: url('../images/icon-delete.svg');
+  }
+}
