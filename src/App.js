@@ -1,12 +1,22 @@
-import './App.css';
-
-
+import "./App.css";
+import InvoiceList from "./components/InvoiceList";
+import {QueryClient, QueryClientProvider} from 'react-query';
+import { Route, Switch } from 'react-router-dom'
+import InvoicePage from "./components/InvoicePage";
 
 function App() {
+  const queryClient = new QueryClient();
   return (
-   <>
-   Hello
-   </>
+    <>
+    <div className="App">
+      <QueryClientProvider client={queryClient}>
+          <Switch>
+            <Route path='/' exact component={InvoiceList}></Route>
+            <Route path='/invoice/:id' component={InvoicePage}></Route>
+          </Switch>
+      </QueryClientProvider>  
+    </div>
+    </>   
   );
 }
 
