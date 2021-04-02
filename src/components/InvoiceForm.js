@@ -49,7 +49,7 @@ export default function InvoiceForm({ invoice }) {
     onSuccess: () => queryClient.invalidateQueries('invoices')
   });
   const editMutation = useMutation(editInvoice, {
-    onSuccess: (invoice) => queryClient.invalidateQueries(['invoice', invoice.id])
+    onSuccess: () => queryClient.invalidateQueries('invoice')
   });
   
 
