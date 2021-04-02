@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import daysjs from 'dayjs'
+import {formatCost} from '../helpers/FormHelpers'
 
 export default function InvoiceLink({invoice}) {
     return (
@@ -6,8 +8,8 @@ export default function InvoiceLink({invoice}) {
             <Link className="invoice-link" to={`/invoice/${invoice.id}`}>
                 <div className="invoice-card">
                     <p>#{invoice.id}</p>
-                    <p>{invoice.createdAt}</p>
-                    <p>{invoice.total}</p>
+                    <p>Due {daysjs(invoice.createdAt).format('DD MMM YYYY')}</p>
+                    <p>£{formatCost(invoice.total)}</p>
                     <p>{invoice.clientName}</p>
                     <p>{invoice.status}</p>
                 </div>
