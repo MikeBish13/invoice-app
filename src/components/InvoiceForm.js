@@ -4,7 +4,7 @@ import { useForm, useFieldArray } from "react-hook-form";
 import TrashCan from "../images/icon-delete.svg";
 import { formatData } from "../helpers/FormHelpers";
 import daysjs from "dayjs";
-import {useMutation, QueryClient} from 'react-query'
+import {useMutation, useQueryClient} from 'react-query'
 import {addInvoice, editInvoice} from '../Api/ApiCalls'
 
 
@@ -44,7 +44,9 @@ export default function InvoiceForm({ invoice }) {
     control,
     name: "items",
   });
-  const queryClient = new QueryClient();
+  
+  const queryClient = useQueryClient();
+
   const addMutation = useMutation(addInvoice, {
     onSuccess: () => queryClient.invalidateQueries('invoices')
   });

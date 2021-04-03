@@ -1,15 +1,21 @@
 export const fetchData = async () => {
   const res = await fetch("http://localhost:3004/invoices");
+  if (!res.ok) {
+    throw new Error(`HTTP error! status: ${res.status}`);
+  }
   return res.json();
 };
 
 export const fetchInvoice = async (id) => {
   const res = await fetch(`http://localhost:3004/invoices?id=${id}`);
+  if (!res.ok) {
+    throw new Error(`HTTP error! status: ${res.status}`);
+  }
   return res.json();
 };
 
-export const addInvoice = (data) => {
-  fetch("http://localhost:3004/invoices", {
+export const addInvoice = async (data) => {
+  await fetch("http://localhost:3004/invoices", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -18,8 +24,8 @@ export const addInvoice = (data) => {
   });
 };
 
-export const editInvoice = (data) => {
-  fetch(`http://localhost:3004/invoices/${data.id}`, {
+export const editInvoice = async (data) => {
+  await fetch(`http://localhost:3004/invoices/${data.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -28,12 +34,18 @@ export const editInvoice = (data) => {
   });
 };
 
-export const deleteInvoice = (id) => {
-  fetch(`http://localhost:3004/invoices/${id}`, {
+export const deleteInvoice = async (id) => {
+  await fetch(`http://localhost:3004/invoices/${id}`, {
     method: "DELETE",
   });
 };
 
-export const setPaidInvoice = (id) => {
-  console.log("invoice: " + id);
+export const setPaidInvoice = async (id) => {
+  await fetch(`http://localhost:3004/invoices/${id}`, {
+      method: "PATCH",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify({status: "paid"})
+  });
 };

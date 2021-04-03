@@ -1,13 +1,13 @@
 import React, {useState} from "react";
 import { useStore } from "../store";
 import { deleteInvoice } from "../Api/ApiCalls";
-import { useMutation, QueryClient } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 import { Redirect } from "react-router-dom";
 
 export default function DeleteModal({ id }) {
   const { setDeleteModal } = useStore();
   const [redirect, setRedirect ] = useState(false);
-  const queryClient = new QueryClient();
+  const queryClient = useQueryClient();
 
   const mutation = useMutation(deleteInvoice, {
     onSuccess: () => {

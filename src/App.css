@@ -35,7 +35,7 @@ ul {
     background: rgb(253, 171, 185);
 }
 
-.invoice-form {
+.invoice-form, .delete-modal {
     position: absolute;
     top: 0;
     left: 0;
