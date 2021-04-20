@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
 
 h1 {
@@ -23,3 +24,61 @@ h3 {
     line-height: 1.5;
     letter-spacing: -0.8px;
 }
+=======
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
+
+h1 {
+  font-size: 1.25rem;
+  letter-spacing: -1px;
+  font-weight: var(--fw-bold);  
+  color: var(--clr-txt-bold);
+  @include mq(tablet) {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+    letter-spacing: -0.5px;
+    color: var(--clr-txt-bold);
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: var(--clr-txt-bold);
+    font-weight: var(--fw-bold);
+    letter-spacing: -0.63px;
+    @include mq(tablet) {
+      font-size: 1.5rem;
+    }
+}
+h4 {
+    font-size: 1.25rem;
+    color: var(--clr-txt-bold);
+    font-weight: var(--fw-bold);
+    letter-spacing: -0.63px;
+}
+
+p {
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  letter-spacing: -0.25px;
+  font-weight: var(--fw-med);
+  color: var(--clr-txt-primary);
+}
+
+.para-lg {
+  font-size: 0.9375rem;
+}
+
+.para-bold {
+  font-weight: var(--fw-bold);
+  color: var(--clr-txt-bold);
+}
+
+.para-address {
+  font-size: 0.6875rem;
+  line-height: 18px;
+}
+>>>>>>> development

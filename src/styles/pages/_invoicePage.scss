@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .invoice-details {
   padding-top: 2rem;
   padding-bottom: 9rem;
@@ -54,10 +55,68 @@
         padding: 0;
         width: auto;
         gap: 0.5rem;
+=======
+.invoice-page {
+  padding: 2rem 0 9rem 0;
+  @include mq(tablet) {
+      padding: 2rem;
+  }
+}
+
+.status-bar {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  background: var(--clr-box-bg-primary);
+  @include mq(tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  &-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    p {
+      color: var(--clr-txt-secondary);
+      @include mq(tablet) {
+          margin-right: 1rem;
+      }
+    }
+    @include mq(tablet) {
+        width: 50%;
+        justify-content: flex-start;
+    }
+  }
+
+  .control-buttons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--clr-box-bg-primary);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;    
+    @include mq(tablet) {
+        position: initial;
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0.5rem;
+        width: 50%;
+>>>>>>> development
     }
   }
 }
 
+<<<<<<< HEAD
 .invoice-grid {
   background: white;
   border-radius: 0.5rem;
@@ -170,10 +229,107 @@
 
   .mobile-row {
       &-container {
+=======
+.invoice-details {
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  background: var(--clr-box-bg-primary);
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  p {
+    color: var(--btn-three-txt);
+  }
+  .para-bold {
+    color: var(--clr-txt-bold);
+  }
+  @include mq(tablet) {
+    padding: 2rem;
+  }
+
+  &-id-desc {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-bottom: 2rem;
+
+    p {
+      margin-top: 0.25rem;
+    }
+  }
+
+  &-sender-address {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin-bottom: 2rem;
+    @include mq(tablet) {
+      text-align: right;
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &-invoice-date {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    margin-bottom: 2rem;
+
+    .para-lg {
+      margin-top: 0.75rem;
+    }
+  }
+
+  &-payment-date {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    margin-bottom: 2.25rem;
+
+    .para-lg {
+      margin-top: 0.75rem;
+    }
+  }
+
+  &-client-details {
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+
+    .para-lg {
+      margin: 0.75rem 0;
+    }
+  }
+
+  &-client-email {
+    grid-column: 1 / 3;
+    grid-row: 5 / 6;
+    margin-bottom: 2.5rem;
+
+    .para-lg {
+      margin-top: 0.75rem;
+    }
+
+    @include mq(tablet) {
+      grid-column: 3 / 4;
+      grid-row: 3 / 5;
+    }
+  }
+
+  &-items {
+    background: var(--clr-box-bg-secondary);
+    padding: 1.5rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    grid-column: 1 / 3;
+    grid-row: 6 / 7;
+    @include mq(tablet) {
+      display: none;
+    }
+
+    .invoice-details-item {
+>>>>>>> development
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 1.5rem;
+<<<<<<< HEAD
       padding: 0 1.5rem;
     }
     @include mq(tablet) {
@@ -263,5 +419,91 @@
         }
     }
     
+=======
+
+      .para-bold {
+        margin-bottom: 0.5rem;
+      }
+
+      .item-sum {
+        font-weight: var(--fw-bold);
+      }
+    }
+  }
+
+  &-items-desktop {
+    display: none;
+    background: var(--clr-box-bg-secondary);
+    padding: 2rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    table {
+      width: 100%;
+
+      th:first-of-type,
+      td:first-of-type {
+        text-align: left;
+      }
+
+      th,
+      td {
+        text-align: right;
+        padding: 1rem 0;
+      }
+
+      th:nth-child(2),
+      td:nth-child(2) {
+        text-align: center;
+      }
+
+      td {
+        p {
+          font-weight: var(--fw-bold);
+        }
+      }
+    }
+    @include mq(tablet) {
+      display: block;
+      grid-column: 1 / 4;
+      grid-row: 6 / 7;
+    }
+  }
+
+  &-total {
+    background: var(--clr-box-banner);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    grid-column: 1 / 3;
+    grid-row: 7 / 8;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    p {
+      color: var(--clr-white);
+
+      &:last-of-type {
+        font-size: 1.25rem;
+        font-weight: var(--fw-bold);
+        @include mq(tablet) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    @include mq(tablet) {
+      grid-column: 1 / 4;
+      grid-row: 7 / 8;
+      padding: 2rem;
+    }
+
+    &-text::before {
+      content: "Grand Total";
+      @include mq(tablet) {
+        content: "Amount Due";
+      }
+    }
+>>>>>>> development
   }
 }

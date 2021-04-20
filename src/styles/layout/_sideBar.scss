@@ -1,0 +1,112 @@
+.sidebar {
+    background: var(--clr-navy-light);
+    display: flex;
+    justify-content: space-between;
+    padding-right: 1.5rem;
+    @include mq(desktop) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 6.4rem;
+        height: 100%;
+        flex-direction: column;
+        border-top-right-radius: 1.25rem;
+        border-bottom-right-radius: 1.25rem;
+        padding-right: 0;
+    }
+}
+
+.avatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.logo {
+    background: var(--clr-purple);
+    height: 4.5rem;
+    width: 4.5rem;
+    border-top-right-radius: 1.25rem;
+    border-bottom-right-radius: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    @include mq(desktop) {
+        width: 6.4rem;
+        height: 6.4rem;
+    }
+
+    img {
+        position: relative;
+        z-index: 2;
+        @include mq(desktop) {
+            width: 40px;
+            height: 37px;
+        }
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        border-top-left-radius: 1.25rem;
+        border-bottom-right-radius: 1.25rem;
+        height: 2.25rem;
+        width: 4.5rem;
+        background: #9277FF;
+        z-index: 0;
+        @include mq(desktop) {
+            width: 6.4rem;
+            height: 3.2rem;
+        }
+    }
+}
+
+.navbar-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mq(desktop) {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.toggleMode {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    outline: transparent;
+    margin-right: 1.5rem;
+    @include mq(desktop) {
+        margin-right: 0;
+    }
+    @include mq(desktop) {
+        padding-bottom: 2rem;
+    }
+}
+
+.avatar-holder {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1.5rem;
+    border-left: 1px solid #494E6E;
+    @include mq(desktop) {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid #494E6E;
+        padding: 24px 0;
+        width: 100%;
+    }
+
+    img {
+        @include mq(desktop) {
+            height: 40px;
+            width: 40px;
+        }
+    }
+}

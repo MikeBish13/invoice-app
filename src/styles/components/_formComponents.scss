@@ -1,10 +1,15 @@
 label {
   font-size: 0.75rem;
+<<<<<<< HEAD
   color: $btn-quarternary-font;
+=======
+  color: var(--clr-txt-label);
+>>>>>>> development
   line-height: 0.9;
 }
 
 input[type="text"],
+<<<<<<< HEAD
 input[type="date"],
 select,
 input[type="number"] {
@@ -14,12 +19,46 @@ input[type="number"] {
   font-size: 0.75rem;
   font-weight: $fw-bold;
   color: $text-color;
+=======
+input[type="number"],
+input[type="email"],
+input[type="date"],
+select {
+  border: var(--input-border);
+  background: var(--clr-box-bg-primary);
+  color: var(--clr-txt-bold);
+  border-radius: 0.25rem;
+  padding: 1rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+>>>>>>> development
   line-height: 1.2em;
   width: 100%;
 
   &::placeholder {
     opacity: 0.4;
   }
+<<<<<<< HEAD
+=======
+
+  &:focus {
+    outline: var(--input-border-active);
+  }
+}
+
+input[type="text"].input-error {
+  border: 1px solid var(--clr-red);
+}
+input[type="number"].input-error {
+  border: 1px solid var(--clr-red);
+}
+input[type="email"].input-error {
+  border: 1px solid var(--clr-red);
+}
+
+input[type="number"] {
+  padding: 1rem;
+>>>>>>> development
 }
 
 input::-webkit-outer-spin-button,
@@ -30,6 +69,7 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+<<<<<<< HEAD
 
 .form-title {
   font-size: 0.75rem;
@@ -59,3 +99,5 @@ input[type="number"] {
       background-image: url('../images/icon-delete.svg');
   }
 }
+=======
+>>>>>>> development

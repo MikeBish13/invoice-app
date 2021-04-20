@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $background-light: #f8f8fb;
 $box-background: #ffffff;
 $nav-box: #373b53;
@@ -36,4 +37,87 @@ $fw-med: 500;
   $btn-quarternary-bg-hover: white;
   $btn-five-bg: #0C0E16;
   $btn-five-bg-hover: #1E2139;
+=======
+:root {
+  // Light Mode ========
+  --clr-background: #f8f8fb;
+  --clr-txt-bold: #0c0e16;
+  --clr-txt-primary: #888eb0;
+  --clr-txt-secondary: #858bb2;
+  --clr-txt-label: #7e88c3;
+  --clr-box-bg-primary: #ffffff;
+  --clr-box-bg-secondary: #f9fafe;
+  --clr-box-banner: #373b53;
+  --btn-three-bg: #f9fafe;
+  --btn-three-bg-hover: #dfe3fa;
+  --btn-three-txt: #7e88c3;
+  --btn-four-bg: #f9fafe;
+  --btn-four-txt: #7e88c3;
+  --btn-four-bg-hover: #dfe3fa;
+  --btn-five-txt: #888eb0;
+  --btn-five-bg: #373b53;
+  --btn-five-bg-hover: #0c0e16;
+  --btn-six-bg: #f9fafe;
+  --btn-six-txt: #7e88c3;
+  --btn-six-bg-hover: #dfe3fa;
+  --btn-status-draft-bg: #373b531a;
+  --btn-status-draft-txt: #373b53;
+  --box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.1);
+  --input-border: 1px solid #dfe3fa;
+  --input-border-active: 1px solid #9277ff;
+  --mobile-form-gradient: linear-gradient(
+    0deg,
+    rgba(204, 204, 204, 1) 0%,
+    rgba(255, 255, 255, 0.9878326330532213) 20%
+  );
+  //   ====================
+
+  --clr-red: #ec5757;
+  --clr-red-hover: #ff9797;
+  --clr-purple: #7c5dfa;
+  --clr-purple-hover: #9277ff;
+  --clr-light: #f8f8fb;
+  --clr-white: #ffffff;
+  --clr-navy-dark: #1e2139;
+  --clr-navy-light: #252945;
+  --clr-light-gray: #dfe3fa;
+  --clr-dark-gray: #888eb0;
+  --clr-blue: #7e88c3;
+  --clr-dark: #0c0e16;
+  --clr-dark-med: #141625;
+
+  --fw-bold: 700;
+  --fw-med: 500;
+}
+
+[data-theme="dark"] {
+  // Dark Mode ========
+  --clr-background: #141625;
+  --clr-txt-bold: #ffffff;
+  --clr-txt-primary: #dfe3fa;
+  --clr-txt-secondary: #ffffff;
+  --clr-txt-label: #dfe3fa;
+  --clr-box-bg-primary: #1e2139;
+  --clr-box-bg-secondary: #252945;
+  --clr-box-banner: #0c0e16;
+  --btn-three-bg: #252945;
+  --btn-three-bg-hover: #dfe3fa;
+  --btn-three-txt: #dfe3fa;
+  --btn-four-txt: #dfe3fa;
+  --btn-four-bg: #252945;
+  --btn-four-bg-hover: #ffffff;
+  --btn-five-txt: #dfe3fa;
+  --btn-five-bg: #373b53;
+  --btn-five-bg-hover: #1e2139;
+  --btn-six-txt: #888eb0;
+  --btn-six-bg: #252945;
+  --btn-six-bg-hover: #25294594;
+  --btn-status-draft-bg: #dfe3fa11;
+  --btn-status-draft-txt: #dfe3fa;
+  --box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  --input-border: 1px solid #252945;
+  --input-border-active: 1px solid #252945;
+  --mobile-form-gradient: rgb(20, 22, 37);
+  //   ==============
+>>>>>>> development
 }
