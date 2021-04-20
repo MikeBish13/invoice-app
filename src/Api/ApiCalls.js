@@ -1,5 +1,7 @@
+const API_URL = "https://my-invoice-server.herokuapp.com/invoices";
+
 export const fetchData = async () => {
-  const res = await fetch("http://localhost:3004/invoices");
+  const res = await fetch(API_URL);
   if (!res.ok) {
     throw new Error(`HTTP error! status: ${res.status}`);
   }
@@ -7,7 +9,7 @@ export const fetchData = async () => {
 };
 
 export const fetchInvoice = async (id) => {
-  const res = await fetch(`http://localhost:3004/invoices?id=${id}`);
+  const res = await fetch(`${API_URL}?id=${id}`);
   if (!res.ok) {
     throw new Error(`HTTP error! status: ${res.status}`);
   }
@@ -15,7 +17,7 @@ export const fetchInvoice = async (id) => {
 };
 
 export const addInvoice = async (data) => {
-  await fetch("http://localhost:3004/invoices", {
+  await fetch(API_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -25,7 +27,7 @@ export const addInvoice = async (data) => {
 };
 
 export const editInvoice = async (data) => {
-  await fetch(`http://localhost:3004/invoices/${data.id}`, {
+  await fetch(`${API_URL}/${data.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -35,13 +37,13 @@ export const editInvoice = async (data) => {
 };
 
 export const deleteInvoice = async (id) => {
-  await fetch(`http://localhost:3004/invoices/${id}`, {
+  await fetch(`${API_URL}/${id}`, {
     method: "DELETE",
   });
 };
 
 export const setPaidInvoice = async (id) => {
-  await fetch(`http://localhost:3004/invoices/${id}`, {
+  await fetch(`${API_URL}/${id}`, {
       method: "PATCH",
       headers: {
           "Content-Type": "application/json",

@@ -65,4 +65,7 @@ export const formatCost = (cost) => {
     return parseFloat(cost).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+export const capitaliseStatus = (status) => {
+  return status[0].toUpperCase() + status.substring(1);
+}
 

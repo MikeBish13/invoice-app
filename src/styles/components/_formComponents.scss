@@ -1,0 +1,52 @@
+label {
+  font-size: 0.75rem;
+  color: var(--clr-txt-label);
+  line-height: 0.9;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+select {
+  border: var(--input-border);
+  background: var(--clr-box-bg-primary);
+  color: var(--clr-txt-bold);
+  border-radius: 0.25rem;
+  padding: 1rem 1.25rem;
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.2em;
+  width: 100%;
+
+  &::placeholder {
+    opacity: 0.4;
+  }
+
+  &:focus {
+    outline: var(--input-border-active);
+  }
+}
+
+input[type="text"].input-error {
+  border: 1px solid var(--clr-red);
+}
+input[type="number"].input-error {
+  border: 1px solid var(--clr-red);
+}
+input[type="email"].input-error {
+  border: 1px solid var(--clr-red);
+}
+
+input[type="number"] {
+  padding: 1rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}

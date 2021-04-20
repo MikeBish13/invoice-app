@@ -1,8 +1,9 @@
-import "./App.css";
+import "./styles/App.css";
 import InvoiceList from "./Pages/InvoiceList";
 import { Route, Switch } from 'react-router-dom'
 import InvoicePage from "./Pages/InvoicePage";
 import {QueryClient, QueryClientProvider} from 'react-query';
+import SideBar from "./components/SideBar";
 
 
 const queryClient = new QueryClient();
@@ -12,6 +13,7 @@ function App() {
     <>
     <div className="App">
     <QueryClientProvider client={queryClient}>
+      <SideBar />
           <Switch>
               <Route path='/' exact component={InvoiceList}></Route>
               <Route path='/invoice/:id' component={InvoicePage}></Route>

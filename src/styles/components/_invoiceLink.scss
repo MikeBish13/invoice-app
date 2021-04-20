@@ -1,0 +1,91 @@
+.invoice-link {
+  text-decoration: none;
+  background: var(--clr-box-bg-primary);
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  padding: 1.5rem;
+
+  &:hover {
+    border: 1px solid var(--clr-purple);
+  }
+
+  a {
+    text-decoration: none;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    @include mq(tablet) {
+      grid-template-columns: 13% 25% repeat(3, 1fr) 20px;
+      align-items: center;
+    }
+  }
+
+  &-id {
+    margin-bottom: 1.5rem;
+    span {
+      color: var(--clr-purple);
+    }
+    @include mq(tablet) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      margin-bottom: 0;
+    }
+  }
+
+  &-name {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: flex-end;
+    color: var(--clr-txt-secondary);
+    @include mq(tablet) {
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+      justify-self: start;
+    }
+  }
+
+  &-status {
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+    align-self: center;
+    justify-self: flex-end;
+    @include mq(tablet) {
+      grid-column: 5 / 6;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &-date {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    color: var(--clr-txt-primary);
+    margin-bottom: 0.5rem;
+    @include mq(tablet) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+      justify-self: start;
+      margin-bottom: 0;
+    }
+  }
+
+  &-total {
+    grid-column: 1 / 2;
+    font-size: 1rem;
+    @include mq(tablet) {
+      grid-column: 4 / 5;
+      grid-row: 1 / 2;
+      justify-self: end;
+    }
+  }
+
+  &-arrow {
+    display: none;
+    @include mq(tablet) {
+      display: block;
+      @include mq(tablet) {
+        grid-column: 6 / 7;
+        justify-self: end;
+      }
+    }
+  }
+}

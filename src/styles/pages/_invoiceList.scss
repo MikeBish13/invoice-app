@@ -1,0 +1,151 @@
+.nav-top {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include mq(desktop) {
+    margin-top: 4.5rem;
+  }
+
+  h1 {
+    margin-bottom: 0.2em;
+  }
+
+  .nav-desc-desktop {
+    display: none;
+
+    @include mq(tablet) {
+      display: block;
+    }
+  }
+
+  .nav-desc-mobile {
+    @include mq(tablet) {
+      display: none;
+    }
+  }
+
+  &-details {
+    flex-basis: 50%;
+  }
+}
+
+.filter-bar {
+  cursor: pointer;
+  position: relative;
+
+  .filter {
+    display: flex;
+    align-items: center;
+
+    .filter-icon {
+      margin-left: 0.75rem;
+
+      &.active {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.filter-items {
+  display: none;
+  list-style: none;
+  background: var(--clr-box-bg-primary);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  width: 12rem;
+  position: absolute;
+  left: -100%;
+  top: 1.5rem;
+
+  @include mq(tablet) {
+    left: -25%;
+  }
+
+  &.active {
+    display: block;
+  }
+
+  .filter-item {
+    margin-bottom: 0.7rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+    appearance: none;
+    height: 1rem;
+    width: 1rem;
+    background: #f2f2f2;
+    border-radius: 2px;
+    outline: transparent;
+    display: flex;
+    justify-content: center;
+    margin-right: 0.8rem;
+
+    &:hover {
+      border: 1px solid var(--clr-purple);
+    }
+
+    &::after {
+      content: url("/src/images/icon-check.svg");
+      display: none;
+    }
+
+    &:checked {
+      background: var(--clr-purple);
+    }
+
+    &:checked:after {
+      display: block;
+    }
+  }
+
+  label {
+    cursor: pointer;
+    color: var(--clr-txt-bold);
+    font-size: 0.75rem;
+    font-weight: var(--fw-bold);
+  }
+}
+
+.invoice-list {
+  list-style: none;
+  margin-top: 2rem;
+}
+
+.new-invoice-btn {
+  p::before {
+    content: 'New';
+    @include mq(tablet) {
+      content: 'New Invoice'
+    }
+  }
+}
+
+.empty-list-alert {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 242px;
+  text-align: center;
+
+  h4 {
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    max-width: 220px;
+  }
+}
