@@ -268,16 +268,17 @@ export default function InvoiceForm({ invoice }) {
           <div className="invoice-form-items">
             {fields.map((item, index) => (
               <div key={item.id} className="invoice-form-item">
-                <div className="invoice-form-item-name">
+                <div className="input-field invoice-form-item-name">
                   <label htmlFor={`items[${index}].name`}>Item Name</label>
                   <input
                     type="text"
                     name={`items[${index}].name`}
                     defaultValue={`${item.name}`}
                     ref={register({ required: true })}
+                    className={errors.items?.[index]?.name && 'input-error'}
                   ></input>
                 </div>
-                <div className="invoice-form-item-quantity">
+                <div className="input-field invoice-form-item-quantity">
                   <label htmlFor={`items[${index}].quantity`}>Qty.</label>
                   <input
                     type="number"
@@ -286,6 +287,7 @@ export default function InvoiceForm({ invoice }) {
                     name={`items[${index}].quantity`}
                     defaultValue={`${item.quantity}`}
                     ref={register({ required: true })}
+                    className={errors.items?.[index]?.quantity && 'input-error'}
                     onChange={(e) =>
                       setValue(
                         `items[${index}].total`,
@@ -296,7 +298,7 @@ export default function InvoiceForm({ invoice }) {
                     }
                   ></input>
                 </div>
-                <div className="invoice-form-item-price">
+                <div className="input-field invoice-form-item-price">
                   <label htmlFor={`items[${index}].price`}>Price</label>
                   <input
                     type="number"
@@ -305,6 +307,7 @@ export default function InvoiceForm({ invoice }) {
                     name={`items[${index}].price`}
                     defaultValue={`${item.price}`}
                     ref={register({ required: true })}
+                    className={errors.items?.[index]?.price && 'input-error'}
                     onChange={(e) =>
                       setValue(
                         `items[${index}].total`,
@@ -349,6 +352,7 @@ export default function InvoiceForm({ invoice }) {
             >
               <img src={PlusIcon} alt="plus icon"></img>Add New Item
             </button>
+            {Object.keys(errors).length > 0 && <span className="error-message-bottom">-All fields must be added</span>}
           </div>
           {formStatus === "edit" && (
             <div className="invoice-form-buttons">

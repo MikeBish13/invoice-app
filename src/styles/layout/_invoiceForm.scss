@@ -175,7 +175,7 @@
     }
 
     .add-btn {
-      margin: 3rem 0 6rem;
+      margin: 3rem 0 2rem;
     }
   }
 
@@ -214,6 +214,10 @@
       }
     }
   }
+}
+
+.invoice-form-items {
+  padding-bottom: 3rem;
 }
 
 .invoice-form-item {
@@ -311,6 +315,8 @@
   right: 0;
 
   &-bottom {
+    color: var(--clr-red);
+    font-size: 0.625rem;
     display: block;
     position: initial;
     margin: 2rem 0;

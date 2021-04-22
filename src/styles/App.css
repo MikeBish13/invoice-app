@@ -676,7 +676,7 @@ p {
 }
 
 .invoice-form-items .add-btn {
-  margin: 3rem 0 6rem;
+  margin: 3rem 0 2rem;
 }
 
 .invoice-form-buttons {
@@ -725,6 +725,10 @@ p {
   .invoice-form-buttons .edit-discard-btn {
     margin-left: 65%;
   }
+}
+
+.invoice-form-items {
+  padding-bottom: 3rem;
 }
 
 .invoice-form-item {
@@ -893,6 +897,8 @@ p {
 }
 
 .error-message-bottom {
+  color: var(--clr-red);
+  font-size: 0.625rem;
   display: block;
   position: initial;
   margin: 2rem 0;
